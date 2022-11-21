@@ -14,23 +14,23 @@ const int y = 1;
 
 void InputCoeff(double[,] array)
 {
-    for(int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
         Console.Write($"Введите коэффициенты {i + 1} уравнения (y = k * x + b):\n ");
         Console.WriteLine();
         array[i, k] = Prompt("Введите коэффициент k: ");
         array[i, b] = Prompt("Введите коэффициент b: ");
-        
+
     }
 }
 double[] FindPoint(double[,] num)
 {
     double[] point = new double[2];
-    point[x] =  (num[1,b] - num[0,b]) / (num[0,k] - num[1,k]);
-    point[y] = num[0,k] * point[x] + num[0,b];
+    point[x] = (num[1, b] - num[0, b]) / (num[0, k] - num[1, k]);
+    point[y] = num[0, k] * point[x] + num[0, b];
     return point;
 }
-double[,] findCross = new double[2,2];
+double[,] findCross = new double[2, 2];
 InputCoeff(findCross);
 double[] crossPoint = FindPoint(findCross);
 Console.WriteLine();
