@@ -43,7 +43,7 @@ for (int i = 0; i < m; i++)
     }
 }
 Console.WriteLine("Среднее арифметическое каждого столбца:");
-foreach (double elem in sum)
+foreach (double number in sum)
 {
-    Console.WriteLine(elem / m);
+    Console.WriteLine(number / m);
 }
