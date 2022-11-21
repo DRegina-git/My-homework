@@ -9,24 +9,24 @@ int Prompt(string massage)
 }
 void CreateArray(int[,] table)
 {
-for(int i = 0; i < table.GetLength(0); i++)
-{
-    for(int j = 0; j < table.GetLength(1); j++)
-{
-    table[i, j] = new Random().Next(1, 10);
-}
-}
+    for (int i = 0; i < table.GetLength(0); i++)
+    {
+        for (int j = 0; j < table.GetLength(1); j++)
+        {
+            table[i, j] = new Random().Next(1, 10);
+        }
+    }
 }
 void PrintArray(int[,] table)
 {
-       for(int i = 0; i < table.GetLength(0); i++)
+    for (int i = 0; i < table.GetLength(0); i++)
     {
-       for(int j = 0; j < table.GetLength(1); j++)
-       {
-        Console.Write($" {table[i,j]}");
+        for (int j = 0; j < table.GetLength(1); j++)
+        {
+            Console.Write($" {table[i, j]}");
+        }
+        Console.WriteLine();
     }
-    Console.WriteLine();
-}
 }
 int m = Prompt("Введите количество строк массива: ");
 int n = Prompt("Введите количество столбцов массива: ");
@@ -34,16 +34,16 @@ int[,] array = new int[m, n];
 CreateArray(array);
 PrintArray(array);
 
-    int[] sum = new int[m];
-      for(int i = 0; i < m; i++)
+int[] sum = new int[m];
+for (int i = 0; i < m; i++)
+{
+    for (int j = 0; j < n; j++)
     {
-       for(int j = 0; j < n; j++)
-       {
         sum[i] += array[j, i];
     }
 }
 Console.WriteLine("Среднее арифметическое каждого столбца:");
-foreach(double elem in sum)
+foreach (double elem in sum)
 {
-Console.WriteLine(elem/ m);
-} 
+    Console.WriteLine(elem / m);
+}

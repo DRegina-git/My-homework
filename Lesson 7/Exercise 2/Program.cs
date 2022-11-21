@@ -9,24 +9,24 @@ int Prompt(string massage)
 }
 void CreateArray(int[,] table)
 {
-for(int i = 0; i < table.GetLength(0); i++)
-{
-    for(int j = 0; j < table.GetLength(1); j++)
-{
-    table[i, j] = new Random().Next(1, 10);
-}
-}
+    for (int i = 0; i < table.GetLength(0); i++)
+    {
+        for (int j = 0; j < table.GetLength(1); j++)
+        {
+            table[i, j] = new Random().Next(1, 10);
+        }
+    }
 }
 void PrintArray(int[,] table)
 {
-       for(int i = 0; i < table.GetLength(0); i++)
+    for (int i = 0; i < table.GetLength(0); i++)
     {
-       for(int j = 0; j < table.GetLength(1); j++)
-       {
-        Console.Write($" {table[i,j]}");
+        for (int j = 0; j < table.GetLength(1); j++)
+        {
+            Console.Write($" {table[i, j]}");
+        }
+        Console.WriteLine();
     }
-    Console.WriteLine();
-}
 }
 int m = Prompt("Введите количество строк массива: ");
 int n = Prompt("Введите количество столбцов массива: ");
@@ -35,7 +35,7 @@ CreateArray(array);
 PrintArray(array);
 int a = Prompt("Введите координаты строки: ");
 int b = Prompt("Введите координаты столбца: ");
-if(a > m | b > n)
+if (a > m | b > n)
 {
     Console.WriteLine("Такого элемента в массиве нет");
 }
