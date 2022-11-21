@@ -35,7 +35,7 @@ CreateArray(array);
 PrintArray(array);
 int a = Prompt("Введите координаты строки: ");
 int b = Prompt("Введите координаты столбца: ");
-if (a > m | b > n)
+if ((a > array.GetLength(0)) | (b > array.GetLength(1)) | (a < 0) | (b < 0))
 {
     Console.WriteLine("Такого элемента в массиве нет");
 }
